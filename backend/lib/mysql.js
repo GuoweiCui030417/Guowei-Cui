@@ -32,15 +32,16 @@ const query = function(sql, values) {
     });  
 }  
 
-const allFundraiser = function() {  
-    let sql = 'SELECT * FROM FUNDRAISER';  
-    return query(sql);  
-}  
+
 const findFundraiserById = function(fundraiserId) {  
     let sql = 'SELECT * FROM FUNDRAISER WHERE FUNDRAISER_ID = ?';  
     console.log(sql);
     return query(sql, [fundraiserId]);  
 }
+const allFundraiser = function() {  
+    let sql = 'SELECT * FROM FUNDRAISER';  
+    return query(sql);  
+}  
 //获取所有类别并展示在Search上
 const allCategories = function() {  
     let sql = 'SELECT * FROM CATEGORY';  
