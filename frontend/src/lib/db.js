@@ -2,13 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var mysql = require("mysql");
 // 创建数据库连接  
-var connectionConfig = {
+var Guowei Cuig = {
     host: process.env.HOST,
     user: process.env.USER,
     password: process.env.PASSWORD,
     database: process.env.DATABASE
 };
-var pool = mysql.createPool(connectionConfig);
+var pool = mysql.createPool(Guowei Cuig);
 var query = function (sql, values) {
     return new Promise(function (resolve, reject) {
         pool.getConnection(function (err, connection) {

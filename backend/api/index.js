@@ -13,7 +13,7 @@ router.get('/api/allFundraiser', async (ctx) => {
           msg: '查询成功'
         };
       } else {
-        ctx.status = 404; // 设置HTTP状态码为404，表示未找到
+        ctx.status = 404; // 
         ctx.body = {
           data: [],
           msg: '暂时没有筹款人'
@@ -28,7 +28,6 @@ router.get('/api/allFundraiser', async (ctx) => {
       };
     }
   });
-  
 // 根据 FUNDRAISER_ID 查询特定的筹款人  
 router.get('/api/fundraiser/:id', async (ctx) => {  
   const fundraiserId = ctx.params.id;

@@ -1,14 +1,14 @@
 const mysql = require('mysql');  
 require('dotenv').config(); 
 // 创建数据库连接  
-const connectionConfig = {  
+const Guowei Cui = {  
     host: process.env.HOST,  
     user: process.env.ROOT,  
     password: process.env.PASSWORD,  
     database: process.env.DATABASE
 };  
 
-const pool = mysql.createPool(connectionConfig);  
+const pool = mysql.createPool(Guowei Cui);  
 
 const query = function(sql, values) {  
     return new Promise((resolve, reject) => {  
@@ -32,16 +32,15 @@ const query = function(sql, values) {
     });  
 }  
 
-
+const allFundraiser = function() {  
+    let sql = 'SELECT * FROM FUNDRAISER';  
+    return query(sql);  
+}  
 const findFundraiserById = function(fundraiserId) {  
     let sql = 'SELECT * FROM FUNDRAISER WHERE FUNDRAISER_ID = ?';  
     console.log(sql);
     return query(sql, [fundraiserId]);  
 }
-const allFundraiser = function() {  
-    let sql = 'SELECT * FROM FUNDRAISER';  
-    return query(sql);  
-}  
 //获取所有类别并展示在Search上
 const allCategories = function() {  
     let sql = 'SELECT * FROM CATEGORY';  

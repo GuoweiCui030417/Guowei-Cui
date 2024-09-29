@@ -1,7 +1,7 @@
 import * as mysql from 'mysql';  
 
 // 定义连接配置的接口  
-interface ConnectionConfig {  
+interface Guowei Cuig {  
     host: string;  
     user: string;  
     password: string;  
@@ -9,14 +9,14 @@ interface ConnectionConfig {
 }  
 
 // 创建数据库连接  
-const connectionConfig: ConnectionConfig = {  
+const Guowei Cuig: Guowei Cuig = {  
     host: process.env.HOST,  
     user: process.env.USER,    
     password: process.env.PASSWORD,  
     database: process.env.DATABASE
 };  
 
-const pool = mysql.createPool(connectionConfig);  
+const pool = mysql.createPool(Guowei Cuig);  
 interface DBQuery {  
     (sql: string, values?: any): Promise<any>; // values是可选参数，它是用来替换sql语句中的占位符?  
 }  
