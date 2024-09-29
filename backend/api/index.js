@@ -4,26 +4,29 @@ const router = new Router(); // Use the 'new' keyword
 
 // 查询所有的筹款人
 router.get('/api/allFundraiser', async (ctx) => {
-    await Model.allFundraiser()
-      .then(result => {
-        if (result.length) {
-          ctx.body = {
-            data: result,
-            total: result.length,
-            msg: '查询成功'
-          }
-        } else {
-          try {
-            throw Error('没有找到特定的筹款人')
-          } catch (error) {
-            console.log(error)
-          }
-          ctx.body = {
-            data: 0,
-            msg: '暂时没有筹款人'
-          }
-        }
-      })
+    try {
+      const result = await Model.allFundraiser();
+      if (result.length > 0) {
+        ctx.body = {
+          data: result,
+          total: result.length,
+          msg: '查询成功'
+        };
+      } else {
+        ctx.status = 404; // 设置HTTP状态码为404，表示未找到
+        ctx.body = {
+          data: [],
+          msg: '暂时没有筹款人'
+        };
+      }
+    } catch (error) {
+      console.error(error); // 使用console.error来记录错误
+      ctx.status = 500; // 设置HTTP状态码为500，表示服务器内部错误
+      ctx.body = {
+        error: '服务器错误',
+        msg: '查询失败'
+      };
+    }
   });
   
 // 根据 FUNDRAISER_ID 查询特定的筹款人  
