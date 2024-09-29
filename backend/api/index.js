@@ -14,7 +14,7 @@ router.get('/api/allFundraiser', async (ctx) => {
           }
         } else {
           try {
-            throw Error('没有找到筹款人')
+            throw Error('没有找到特定的筹款人')
           } catch (error) {
             console.log(error)
           }
