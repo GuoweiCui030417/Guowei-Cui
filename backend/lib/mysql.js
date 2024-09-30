@@ -8,7 +8,7 @@ const Guowei  = {
     database: process.env.DATABASE
 };  
 
-const pool = mysql.createPool(Guowei );  
+const pool = mysql.createPool(config);
 
 const query = function(sql, values) {  
     return new Promise((resolve, reject) => {  
