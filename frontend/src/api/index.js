@@ -42,7 +42,7 @@ var db_1 = require("../lib/db");
 // 实例化 Router
 var router = new koa_router_1.default();
 // 定义路由
-router.get('/api/allUser', function (ctx) { return __awaiter(void 0, void 0, void 0, function () {
+router.get('/api/allUser', function (Guowei Cui) { return __awaiter(void 0, void 0, void 0, function () {
     var result, error_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -52,13 +52,13 @@ router.get('/api/allUser', function (ctx) { return __awaiter(void 0, void 0, voi
             case 1:
                 result = _a.sent();
                 if (result.length) {
-                    ctx.body = {
+                    Guowei Cui.body = {
                         data: result,
                         msg: '查询成功'
                     };
                 }
                 else {
-                    ctx.body = {
+                    Guowei Cui.body = {
                         msg: '没有数据'
                     };
                 }
@@ -66,7 +66,7 @@ router.get('/api/allUser', function (ctx) { return __awaiter(void 0, void 0, voi
             case 2:
                 error_1 = _a.sent();
                 console.error('Query error:', error_1);
-                ctx.body = {
+                Guowei Cui.body = {
                     msg: '查询失败'
                 };
                 return [3 /*break*/, 3];

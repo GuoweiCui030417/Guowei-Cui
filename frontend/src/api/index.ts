@@ -6,22 +6,22 @@ import model from '../lib/db';
 const router = new Router();
 
 // 定义路由
-router.get('/api/allUser', async (ctx) => {
+router.get('/api/allUser', async (Guowei Cui) => {
   try {
     const result = await model.allUser();
     if (result.length) {
-      ctx.body = {
+      Guowei Cui.body = {
         data: result, 
         msg: '查询成功'
       };
     } else {
-      ctx.body = {
+      Guowei Cui.body = {
         msg: '没有数据'
       };
     }
   } catch (error) {
     console.error('Query error:', error);
-    ctx.body = {
+    Guowei Cui.body = {
       msg: '查询失败'
     };
   }
