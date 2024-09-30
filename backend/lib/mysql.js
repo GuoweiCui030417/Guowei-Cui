@@ -1,14 +1,14 @@
 const mysql = require('mysql');  
 require('dotenv').config(); 
 // 创建数据库连接  
-const Guowei Cui = {  
+const Guowei  = {  
     host: process.env.HOST,  
     user: process.env.ROOT,  
     password: process.env.PASSWORD,  
     database: process.env.DATABASE
 };  
 
-const pool = mysql.createPool(Guowei Cui);  
+const pool = mysql.createPool(Guowei );  
 
 const query = function(sql, values) {  
     return new Promise((resolve, reject) => {  

@@ -42,26 +42,37 @@ var db_1 = require("../lib/db");
 // 实例化 Router
 var router = new koa_router_1.default();
 // 定义路由
-router.get('/api/allUser', async (ctx) => {
-    try {
-      const result = await db_1.default.allUser();
-      if (result.length) {
-        ctx.body = {
-          data: result,
-          msg: '查询成功'
-        };
-      } else {
-        ctx.body = {
-          msg: '没有数据'
-        };
-      }
-    } catch (error) {
-      console.error('Query error:', error);
-      ctx.status = 500; // 设置HTTP状态码为500，表示服务器内部错误
-      ctx.body = {
-        msg: '查询失败'
-      };
-    }
-  });
+router.get('/api/allUser', function (ctx) { return __awaiter(void 0, void 0, void 0, function () {
+    var result, error_1;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                _a.trys.push([0, 2, , 3]);
+                return [4 /*yield*/, db_1.default.allUser()];
+            case 1:
+                result = _a.sent();
+                if (result.length) {
+                    ctx.body = {
+                        data: result,
+                        msg: '查询成功'
+                    };
+                }
+                else {
+                    ctx.body = {
+                        msg: '没有数据'
+                    };
+                }
+                return [3 /*break*/, 3];
+            case 2:
+                error_1 = _a.sent();
+                console.error('Query error:', error_1);
+                ctx.body = {
+                    msg: '查询失败'
+                };
+                return [3 /*break*/, 3];
+            case 3: return [2 /*return*/];
+        }
+    });
+}); });
 // 导出 router 实例
 exports.default = router;
