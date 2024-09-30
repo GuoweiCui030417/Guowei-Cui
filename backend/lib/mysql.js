@@ -43,10 +43,10 @@ const allFundraiser = function() {
 
 //获取所有类别并展示在Search上
 
-const findFundraisersByCategory = function(category) {  
-    let sql = 'SELECT * FROM FUNDRAISER WHERE CATEGORY_ID = ?';  
-    return query(sql, [category]);  
-}
+const findFundraisersByCategory = (category) => {
+    const sql = 'SELECT * FROM FUNDRAISER WHERE CATEGORY_ID = ?';
+    return query(sql, [category]);
+  };
  const allCategories = function() {  
     let sql = 'SELECT * FROM CATEGORY';  
     return query(sql);  
