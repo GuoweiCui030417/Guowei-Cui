@@ -31,11 +31,11 @@ const query = function(sql, values) {
         });  
     });  
 }  
-const findFundraiserById = function(fundraiserId) {  
-    let sql = 'SELECT * FROM FUNDRAISER WHERE FUNDRAISER_ID = ?';  
+const findFundraiserById = fundraiserId => {
+    const sql = 'SELECT * FROM FUNDRAISER WHERE FUNDRAISER_ID = ?';
     console.log(sql);
-    return query(sql, [fundraiserId]);  
-}
+    return query(sql, [fundraiserId]);
+  };
 const allFundraiser = function() {  
     let sql = 'SELECT * FROM FUNDRAISER';  
     return query(sql);  
