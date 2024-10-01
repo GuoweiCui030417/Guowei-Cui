@@ -3,6 +3,9 @@ const app = new Koa();
 const router = require('./api/index');
 const cors = require('@koa/cors');
 
+app.use(cors());
+app.use(router.routes()).use(router.allowedMethods());
+
 // 使用cors中间件允许跨域请求 
 app.use(cors({  
     origin: '*' // 允许的来源  
