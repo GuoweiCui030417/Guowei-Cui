@@ -43,13 +43,11 @@ const allFundraiser = function() {
 
 //获取所有类别并展示在Search上
 
-const findFundraisersByCategory = (category) => {
+const findFundraisersByCategory = category => {
     const sql = 'SELECT * FROM FUNDRAISER WHERE CATEGORY_ID = ?';
     return query(sql, [category]);
   };
- const allCategories = function() {  
-    let sql = 'SELECT * FROM CATEGORY';  
-    return query(sql);  
-}     
+  
+  const allCategories = () => query('SELECT * FROM CATEGORY');
 // 连接到数据库  
 module.exports = { allFundraiser ,findFundraiserById,allCategories,findFundraisersByCategory};
